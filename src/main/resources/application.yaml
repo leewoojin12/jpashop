@@ -19,5 +19,3 @@ logging:
     org.hibernate.SQL: debug #sql 을 전부 DEBUG 모드로 남긴다는 뜻. Logger 를 통해.
     org.hibernate.type: trace
 
-server:
-  port: 8082
