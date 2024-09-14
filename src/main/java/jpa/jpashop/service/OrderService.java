@@ -40,7 +40,7 @@ public class OrderService {
 
         //배송 정보 조회
 
-        Delivery delivery = new Delivery();
+        Delivery     delivery = new Delivery();
         delivery.setAddress(member.getAddress());
 
 

@@ -13,7 +13,7 @@ import java.util.List;
 import static jakarta.persistence.FetchType.*;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "orders"  )
 @Getter
 @Setter
 public class  Order {
