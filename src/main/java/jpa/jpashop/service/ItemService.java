@@ -18,31 +18,17 @@ import java.util.List;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class ItemService {
-
     private final ItemRepository itemRepository;
 
 
     @Transactional
-    public void saveItem (Item item) {
+    public void saveItem(Item item) {
         itemRepository.save(item);
     }
-
-
-
-
-    public List<Item> findALl(){
+    public List<Item> findItems() {
         return itemRepository.findAll();
     }
-
-
-    public Item findOne(Long Itemid) {
-        return itemRepository.findOne(Itemid);
+    public Item findOne(Long itemId) {
+        return itemRepository.findOne(itemId);
     }
-
-
-
-
-
-
-
-    }
+}
