@@ -29,7 +29,7 @@ public class  Order {
 
 
     @OneToMany(mappedBy = "order" ,cascade = CascadeType.ALL)
-    private List<OrderItem> orderitems = new ArrayList<>();
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne(fetch = LAZY ,cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
@@ -51,7 +51,7 @@ public class  Order {
     }
 
     public void addOrderItem(OrderItem orderItem){
-        orderitems.add(orderItem);
+        orderItems.add(orderItem);
         orderItem.setOrder(this);
 
 
@@ -96,7 +96,7 @@ public class  Order {
         }
 
         this.setStatus(OrderStatus.CANCEL);
-        for(OrderItem orderItem : orderitems){
+        for(OrderItem orderItem : orderItems){
             orderItem.cancel();
         }
 
@@ -109,7 +109,7 @@ public class  Order {
          * 전체 조회 가격 조회
          */
         int totalPrice = 0;
-            for (OrderItem orderItem : orderitems){
+            for (OrderItem orderItem : orderItems){
             totalPrice +=orderItem.getTotalPrice();
 
 
